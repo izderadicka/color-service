@@ -9,7 +9,7 @@ public class RandomColorService implements ColorService{
 
     public Mono<Color> generateColor(Optional<String> name) {
         byte[] colors = new byte[3];
-        Random rng = new Random();
+        Random rng = name.map(s -> new Random(name.hashCode())).orElseGet(()-> new Random());
         rng.nextBytes(colors);
         String result = "#";
 
