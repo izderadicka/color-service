@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import eu.ivan.colorservice.service.ColorService;
 import eu.ivan.colorservice.service.RandomColorService;
+import eu.zderadicka.spoiler.NeverFailingSpoiler;
 
 public class RandomColorServiceTest {
 
@@ -17,7 +18,7 @@ public class RandomColorServiceTest {
 
     @BeforeEach
     public void initTest() {
-        colorService = new RandomColorService();
+        colorService = new RandomColorService(new NeverFailingSpoiler());
     }
 
     @Test
@@ -31,7 +32,6 @@ public class RandomColorServiceTest {
     }
 
     @Test
-
     public void testSameResultForSameName() {
         String c1 = generateColor("Usak");
         String c2 = generateColor("Usak");
