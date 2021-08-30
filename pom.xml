@@ -31,6 +31,8 @@
 			<groupId>eu.zderadicka</groupId>
 			<artifactId>spoiler</artifactId>
 			<version>0.1.0</version>
+			<systemPath>${project.basedir}/lib/spoiler-0.1.0.jar</systemPath>
+			<scope>system</scope>
 		</dependency>
 		
 		<dependency>
