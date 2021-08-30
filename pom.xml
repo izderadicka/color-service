@@ -18,10 +18,23 @@
 		<java.version>11</java.version>
 	</properties>
 
-	<repositories>
+	<!-- <repositories>
 		<repository>
 			<id>local-maven-repo</id>
 			<url>file:///${project.basedir}/../local-maven-repo</url>
+		</repository>
+	</repositories> -->
+
+	<repositories>
+		<repository>
+			<id>izderadicka-releases</id>
+			<url>https://packagecloud.io/izderadicka/releases/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 
@@ -31,10 +44,9 @@
 			<groupId>eu.zderadicka</groupId>
 			<artifactId>spoiler</artifactId>
 			<version>0.1.0</version>
-			<systemPath>${project.basedir}/lib/spoiler-0.1.0.jar</systemPath>
-			<scope>system</scope>
+
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
